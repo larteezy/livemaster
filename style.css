@@ -1,4 +1,4 @@
-.container
+.container /**/
 {
     width: 900px;
     padding: 20px;
@@ -6,26 +6,24 @@
     margin-top: 100px;
 
 }
-.cell
-{
-    display: inline-table;
+.cell /*ячейки*/
+{   
+    /*блок*/
+    display: inline-table; 
     width: 200px;
     height: 200px;
     margin: 10px;
     background: #7a4100;
 
+    /*текст*/
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
     white-space: nowrap; /* блок может содержать не более одной строки */
     text-align: center;
-    line-height: 200px;; /* не поддерживается Opera Mini [opera.com] */
+    line-height: 200px;
     text-align: center;
     color: #e1e1e1;
     font-size: 100px;
     
-}
-.cell p
-{
-    vertical-align: middle;
 }
 .sort
 {
@@ -35,4 +33,35 @@
 .sort .name
 {
     color: blue;
+}
+.buttons
+{
+    position: relative;
+}
+.buttons .edit
+{
+    display: inline;
+    margin: 10px;
+}
+.buttons .size-management
+{
+    display: inline;
+    position: absolute;
+    margin: 10px;
+    right: 10px;
+    
+}
+.size-management #b1
+{
+    width: 20px;
+    height: 20px;
+    background: url(https://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png) no-repeat;
+    background-position: 47.5% 0;
+}
+.size-management #b2
+{
+    width: 20px;
+    height: 20px;
+    background: url(https://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png) no-repeat;
+    background-position: 52.7% 0;
 }
