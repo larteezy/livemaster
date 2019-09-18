@@ -1,0 +1,38 @@
+.container
+{
+    width: 900px;
+    padding: 20px;
+    background: #e1e1e1;
+    margin-top: 100px;
+
+}
+.cell
+{
+    display: inline-table;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background: #7a4100;
+
+    overflow: hidden; /* всё, что выходит за рамки блока обрезается */
+    white-space: nowrap; /* блок может содержать не более одной строки */
+    text-align: center;
+    line-height: 200px;; /* не поддерживается Opera Mini [opera.com] */
+    text-align: center;
+    color: #e1e1e1;
+    font-size: 100px;
+    
+}
+.cell p
+{
+    vertical-align: middle;
+}
+.sort
+{
+    margin: 10px;
+    text-align: right;
+}
+.sort .name
+{
+    color: blue;
+}
