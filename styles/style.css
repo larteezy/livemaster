@@ -1,26 +1,43 @@
 .container /**/
 {
+    user-select: none;
+    position: absolute;
     width: 900px;
-    padding: 20px;
+    padding-bottom:  20px;
+    padding-top:  20px;
+    padding-left: 10px;
+    padding-right: 10px;
     background: #e1e1e1;
     margin-top: 100px;
-
 }
-.cell /*ячейки*/
+ul {
+    margin: 0;
+    padding: 0;
+}
+.cells
+{
+    box-sizing: border-box;
+    /*display: flex;*/
+}
+.cells__elem /*ячейки*/
 {   
+    
     /*блок*/
-    display: inline-table; 
+    position: relative;
+    display: inline-block; 
     width: 200px;
     height: 200px;
     margin: 10px;
-    background: #7a4100;
+    background: #633500;
+    
+    
 
     /*текст*/
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
     white-space: nowrap; /* блок может содержать не более одной строки */
     text-align: center;
+    
     line-height: 200px;
-    text-align: center;
     color: #e1e1e1;
     font-size: 100px;
     
@@ -65,3 +82,15 @@
     background: url(https://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png) no-repeat;
     background-position: 52.7% 0;
 }
+.selected
+{
+    display: inline-block; 
+    background: #ff0000;
+}
+.deleted
+{
+    display: none;
+}
+.selectable .ui-selecting { background: #FECA40; }
+.selectable .ui-selected { background: #F39814; color: white; }
+
