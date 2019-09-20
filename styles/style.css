@@ -3,10 +3,8 @@
     user-select: none;
     position: absolute;
     width: 900px;
-    padding-bottom:  20px;
-    padding-top:  20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top:  10px;
     background: #e1e1e1;
     margin-top: 100px;
 }
@@ -14,7 +12,9 @@
 ul {
     font-size: 0;
     margin: 0;
-    padding: 0;
+    
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .cells__elem /*ячейки*/
@@ -26,7 +26,7 @@ ul {
     width: 200px;
     height: 200px;
     margin: 10px;
-    background: #633500;
+    background: #724734;
     
     /*текст*/
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
@@ -40,7 +40,6 @@ ul {
 }
 .sort
 {
-    
     margin: 10px;
     text-align: right;
 }
@@ -58,31 +57,34 @@ ul {
 .buttons
 {
     position: relative;
+    padding: 10px 15px; 
 }
 .buttons .edit
 {
     display: inline;
-    margin: 10px;
+    margin: 0px 5px;
 }
 .buttons .size-management
 {
     display: inline;
     position: absolute;
-    margin: 10px;
-    right: 10px;
+    right: 18px;
     
+}
+.sm-style #b1,
+.sm-style #b2
+{
+    margin: 0px 2px;
+    width: 20px;
+    height: 20px;
 }
 .size-management #b1
 {
-    width: 20px;
-    height: 20px;
     background: url(https://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png) no-repeat;
     background-position: 47.5% 0;
 }
 .size-management #b2
 {
-    width: 20px;
-    height: 20px;
     background: url(https://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png) no-repeat;
     background-position: 52.7% 0;
 }
@@ -96,9 +98,6 @@ ul {
     display: none;
 }
 
-.selectable .ui-selecting { background: #FECA40; }
-.selectable .ui-selected { background: #F39814; color: white; }
-
 .placeforcell 
 { /*Подложка*/
     box-sizing: border-box;
@@ -106,7 +105,7 @@ ul {
     width: 200px;
     height: 200px;
     margin: 10px;
-    background: #795f42;
+    background: #937a66;
     border: 3px dashed black;
     
 
@@ -114,7 +113,7 @@ ul {
     line-height: 200px;
  }
 
- .bigcells .cells__elem,
+ .bigcells .cells__elem, /*Для .cells__elem и .placeforcell которые вложены в .bigcells*/
  .bigcells .placeforcell 
  {
      width: 420px;
