@@ -10,18 +10,16 @@
     background: #e1e1e1;
     margin-top: 100px;
 }
+
 ul {
+    font-size: 0;
     margin: 0;
     padding: 0;
 }
-.cells
-{
-    box-sizing: border-box;
-    /*display: flex;*/
-}
+
 .cells__elem /*ячейки*/
 {   
-    
+    box-sizing: border-box;
     /*блок*/
     position: relative;
     display: inline-block; 
@@ -30,8 +28,6 @@ ul {
     margin: 10px;
     background: #633500;
     
-    
-
     /*текст*/
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
     white-space: nowrap; /* блок может содержать не более одной строки */
@@ -44,13 +40,20 @@ ul {
 }
 .sort
 {
+    
     margin: 10px;
     text-align: right;
 }
 .sort__name
 {
-    
+    text-decoration: none; /* Убираем подчеркивание */
+    border-bottom: 1px dashed blue; /* Добавляем свою линию */
     color: blue;
+}
+.sort__name:hover
+{  
+    border-bottom: none;
+    text-decoration: underline;
 }
 .buttons
 {
@@ -86,12 +89,36 @@ ul {
 .selected
 {
     display: inline-block; 
-    background: #ff0000;
+    background: brown;
 }
 .deleted
 {
     display: none;
 }
+
 .selectable .ui-selecting { background: #FECA40; }
 .selectable .ui-selected { background: #F39814; color: white; }
 
+.placeforcell 
+{ /*Подложка*/
+    box-sizing: border-box;
+    display: inline-block; 
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background: #795f42;
+    border: 3px dashed black;
+    
+
+    /*текст*/
+    line-height: 200px;
+ }
+
+ .bigcells .cells__elem,
+ .bigcells .placeforcell 
+ {
+     width: 420px;
+     height: 420px;
+     font-size: 200px;
+     line-height: 420px;
+ }
