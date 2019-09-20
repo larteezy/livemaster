@@ -47,8 +47,9 @@ ul {
     margin: 10px;
     text-align: right;
 }
-.sort .name
+.sort__name
 {
+    
     color: blue;
 }
 .buttons
