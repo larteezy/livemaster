@@ -1,18 +1,5 @@
 $( function() 
 {
-    $('.cells__elem').click(function(){ //При клике на невыделенный элемент 
-        $( this ).toggleClass('selected');
-        if ($('.selected').length != 0)
-        {
-            $( '#delete' ).removeAttr('disabled');
-        }
-        else
-        {
-            $( '#delete' ).attr('disabled', 'disabled'); 
-        }
-
-    });
-
     $('#delete').click(function(){ //При клике на кнопку Удалить
         /*
         var elements = $('.selected');
@@ -35,36 +22,36 @@ $( function()
     });
 
     $('#addcell').click(function(){ //При клике на кнопку Сбросить
-        items = $('.cells .cells__elem');
+        var items = document.getElementsByClassName('cells__elem');
+        //console.log(items[0]);
+        //console.log(items[0].getAttribute('data-sort'));
         
-        arItems = $.makeArray(items);
-        arItems .sort(function(a, b) 
-        {
-            return $(a).data("sort") - $(b).data("sort")
-        });
+        var arItems = $.makeArray(items);
+
+        var maxDataSort = 0;
 
         for (i = 0; i < arItems.length; i++)
         {
-            console.log(i);
-            
-            if ((i + 1) != arItems[i])
+            console.log('mDS = ' + maxDataSort);
+            console.log('data = ' + arItems[i].getAttribute('data-sort'));
+            if (Number(maxDataSort) < Number(arItems[i].getAttribute('data-sort')))
             {
-                var ul = document.getElementById("sortable");
-                var li = document.createElement('li');
-                li.setAttribute('class', 'cells__elem');
-                li.setAttribute('datasort', i + 2);
-                li.appendChild(document.createTextNode(i + 2));
+                console.log('mDS(' + maxDataSort + ') = data(' + arItems[i].getAttribute('data-sort'));
+                maxDataSort = arItems[i].getAttribute('data-sort');
             }
         }
-        
-        //li.appendChild(document.createTextNode("9"));
-        //var a = document.createAttribute('value');
-        //a.value = '9';
-        //li.appendChild(a);
+
+        var ul = document.getElementById("sortable");
+        var li = document.createElement('li');
+        li .setAttribute('class', 'cells__elem ui-sortable-handle');
+        li.setAttribute('data-sort', Number(maxDataSort) + 1);
+        li.appendChild(document.createTextNode(Number(maxDataSort) + 1));
         ul.appendChild(li);
-        //ul.appendChild(items[1]);
-        //$(".cells ul").append ('<li class="cells__elem" data-sort="9">9</li>');
-        console.log('<li class="cells__elem" data-sort="9">9</li>');
+        console.log('добавленоы');
+        
+
+        
+        
         
 /*
         arItems .sort(function(a, b) 
@@ -128,6 +115,18 @@ $( function()
         placeholder: "placeforcell",
         containment: ".container"
     });    
+
+    $('ul').on("click", "li.cells__elem", function(){ //При клике на невыделенный элемент 
+        $( this ).toggleClass('selected');
+        if ($('.selected').length != 0)
+        {
+            $( '#delete' ).removeAttr('disabled');
+        }
+        else
+        {
+            $( '#delete' ).attr('disabled', 'disabled'); 
+        }
+    });
 
     //$( ".sortable" ).disableSelection();
 } );
