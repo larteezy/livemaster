@@ -1,20 +1,38 @@
+*{
+    box-sizing: border-box;
+}
 .container /**/
 {
     user-select: none;
     position: absolute;
-    width: 900px;
+    width: 99vw;
+    max-width: 99vw;
+    max-height: 98vh;
+    
     padding-bottom: 10px;
     padding-top:  10px;
     background: #e1e1e1;
-    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 ul {
     font-size: 0;
     margin: 0;
-    
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.cells {
+    display: inline-flex;
+    max-height: 88vh;
+    
+    max-width: 99%;
+    min-width: 99%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    
 }
 
 .cells__elem /*ячейки*/
@@ -24,6 +42,7 @@ ul {
     position: relative;
     display: inline-block; 
     width: 200px;
+    
     height: 200px;
     margin: 10px;
     background: #724734;
